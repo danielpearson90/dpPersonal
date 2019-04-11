@@ -1,0 +1,14 @@
+Package: dpPersonal
+Type: Package
+Title: Daniel Pearson's Personal Function Package
+Version: 0.1.0
+Author: Daniel Pearson
+Maintainer: Daniel Pearson <d.pearson@unsw.edu.au>
+Description: This package contains some functions that are commonly used by Daniel Pearson.
+License: MIT
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
+Imports:
+    dplyr,
+    magrittr
