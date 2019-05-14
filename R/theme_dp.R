@@ -99,9 +99,9 @@ if (!ticks) {
   ret <- ret + theme(axis.ticks.x = element_blank())
   ret <- ret + theme(axis.ticks.y = element_blank())
 } else {
-  ret <- ret + theme(axis.ticks = element_line(size=0.15))
-  ret <- ret + theme(axis.ticks.x = element_line(size=0.15))
-  ret <- ret + theme(axis.ticks.y = element_line(size=0.15))
+  ret <- ret + theme(axis.ticks = element_line(size=0.5))
+  ret <- ret + theme(axis.ticks.x = element_line(size=0.5))
+  ret <- ret + theme(axis.ticks.y = element_line(size=0.5))
   ret <- ret + theme(axis.ticks.length = grid::unit(5, "pt"))
 }
 
@@ -110,8 +110,8 @@ xj <- switch(tolower(substr(axis_title_just, 1, 1)), b=0, l=0, m=0.5, c=0.5, r=1
 yj <- switch(tolower(substr(axis_title_just, 2, 2)), b=0, l=0, m=0.5, c=0.5, r=1, t=1)
 
 
-ret <- ret + theme(axis.text.x=element_text(size=axis_text_size, margin=margin(t=2)))
-ret <- ret + theme(axis.text.y=element_text(size=axis_text_size, margin=margin(r=2)))
+ret <- ret + theme(axis.text.x=element_text(size=axis_text_size, margin=margin(t=2), color = "#000000"))
+ret <- ret + theme(axis.text.y=element_text(size=axis_text_size, margin=margin(r=2), color = "#000000"))
 ret <- ret + theme(axis.title=element_text(size=axis_title_size, family=axis_title_family))
 ret <- ret + theme(axis.title.x=element_text(hjust=xj, size=axis_title_size,
                                              family=axis_title_family, face=axis_title_face, margin = margin(t=8)))
