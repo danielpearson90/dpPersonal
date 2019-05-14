@@ -49,13 +49,14 @@ ret <- ggplot2::theme_minimal(base_family=base_family, base_size=base_size)
 
 ret <- ret + theme(legend.background=element_blank())
 ret <- ret + theme(legend.key=element_blank())
+ret <- ret + theme(text = element_text(color="#000000"))
 
 # This defines the grid if it is active
 if (inherits(grid, "character") | grid == TRUE) {
 
-  ret <- ret + theme(panel.grid=element_line(color=grid_col, size=0.2))
-  ret <- ret + theme(panel.grid.major=element_line(color=grid_col, size=0.2))
-  ret <- ret + theme(panel.grid.minor=element_line(color=grid_col, size=0.15))
+  ret <- ret + theme(panel.grid=element_line(color=grid_col, size=0.5))
+  ret <- ret + theme(panel.grid.major=element_line(color=grid_col, size=0.5))
+  ret <- ret + theme(panel.grid.minor=element_line(color=grid_col, size=0.5))
 
   if (inherits(grid, "character")) {
     if (regexpr("X", grid)[1] < 0) ret <- ret + theme(panel.grid.major.x=element_blank())
@@ -70,22 +71,22 @@ if (inherits(grid, "character") | grid == TRUE) {
 
 # This defines the axes if they are activated
 if (inherits(axis, "character") | axis == TRUE) {
-  ret <- ret + theme(axis.line=element_line(color="#2b2b2b", size=0.15))
+  ret <- ret + theme(axis.line=element_line(color="#2b2b2b", size=0.5))
   if (inherits(axis, "character")) {
     axis <- tolower(axis)
     if (regexpr("x", axis)[1] < 0) {
       ret <- ret + theme(axis.line.x=element_blank())
     } else {
-      ret <- ret + theme(axis.line.x=element_line(color=axis_col, size=0.15))
+      ret <- ret + theme(axis.line.x=element_line(color=axis_col, size=0.5))
     }
     if (regexpr("y", axis)[1] < 0) {
       ret <- ret + theme(axis.line.y=element_blank())
     } else {
-      ret <- ret + theme(axis.line.y=element_line(color=axis_col, size=0.15))
+      ret <- ret + theme(axis.line.y=element_line(color=axis_col, size=0.5))
     }
   } else {
-    ret <- ret + theme(axis.line.x=element_line(color=axis_col, size=0.15))
-    ret <- ret + theme(axis.line.y=element_line(color=axis_col, size=0.15))
+    ret <- ret + theme(axis.line.x=element_line(color=axis_col, size=0.5))
+    ret <- ret + theme(axis.line.y=element_line(color=axis_col, size=0.5))
   }
 } else {
   ret <- ret + theme(axis.line=element_blank())
